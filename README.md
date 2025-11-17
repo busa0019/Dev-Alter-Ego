@@ -31,7 +31,7 @@ A fun and interactive quiz that reveals your developer alter ego based on your c
 
 ## Live Demo
 
-Check out the live version: [GitHub Pages URL] (if deployed)
+Check out the live version: https://busa0019.github.io/Dev-Alter-Ego/
 
 ## License
 

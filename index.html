@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Dev Alter Ego? 🦸‍♂️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="quiz-container">
+        <div class="fun-header">
+            <span class="emoji-sparkle">✨</span>
+            <h1>What's Your Dev Alter Ego? 🦸‍♂️</h1>
+            <span class="emoji-sparkle">✨</span>
+        </div>
+        <p class="subtitle">Uncover your secret developer personality based on how you handle bugs, coffee, and questionable code decisions!</p>
+        
+        <div class="progress-bar">
+            <div class="progress" id="quiz-progress"></div>
+        </div>
+        
+        <form id="skill-quiz">
+            
+            <div class="question-block">
+                <h3>1. When a mysterious bug appears, you typically:</h3>
+                <div class="option-group">
+                    <label><input type="radio" name="q1" value="1" required> 🛡️ Summon your coding squad for backup</label>
+                    <label><input type="radio" name="q1" value="3"> 🔧 Start randomly poking things until something works</label>
+                    <label><input type="radio" name="q1" value="5"> 🧙‍♂️ Go on a 4-hour Stack Overflow quest, emerging as a wizard</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>2. Your 9 AM standup meeting preparation involves:</h3>
+                <div class="option-group">
+                    <label><input type="radio" name="q2" value="1" required> ☕ Being early with coffee and detailed notes</label>
+                    <label><input type="radio" name="q2" value="3"> 🛌 Joining from bed while pretending you're at your desk</label>
+                    <label><input type="radio" name="q2" value="5"> 🤔 Spending 10 minutes trying to remember what you did yesterday</label>
+                </div>
+            </div>
+            
+            <div class="question-block">
+                <h3>3. Your code repository is best described as:</h3>
+                <div class="option-group">
+                    <label><input type="radio" name="q3" value="1" required> 🏛️ A beautiful temple of organized code</label>
+                    <label><input type="radio" name="q3" value="3"> 🏠 A cozy cottage with some creative clutter</label>
+                    <label><input type="radio" name="q3" value="5"> 🎪 A three-ring circus of experimental chaos</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>4. When learning new tech, your approach is:</h3>
+                <div class="option-group">
+                    <label><input type="radio" name="q4" value="1" required> 📚 Following tutorials like they're sacred texts</label>
+                    <label><input type="radio" name="q4" value="3"> 🚀 Building something and Googling errors as you go</label>
+                    <label><input type="radio" name="q4" value="5"> 🧪 Throwing everything at the wall to see what sticks</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h3>5. Your ideal coding environment includes:</h3>
+                <div class="option-group">
+                    <label><input type="radio" name="q5" value="1" required> 📊 Clear deadlines and organized tasks</label>
+                    <label><input type="radio" name="q5" value="3"> 🎵 Good music, snacks, and flexible hours</label>
+                    <label><input type="radio" name="q5" value="5"> 🎡 Constant chaos and new fires to put out daily</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="submit-btn">
+                    <span id="btn-text">Reveal My Alter Ego! 🎭</span>
+                    <div class="loading" id="loading" style="display: none;"></div>
+                </button>
+                <button type="button" id="restart-btn" style="display: none;">Find Another Ego! 🔄</button>
+            </div>
+        </form>
+        
+        <div id="result-card">
+            <div class="result-icon" id="result-icon">🎯</div>
+            <h2>Drumroll Please... 🥁</h2>
+            <h1 id="job-title"></h1>
+            <p id="job-description"></p>
+            <div class="score-display" id="score-display"></div>
+        </div>
+    </div>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="reveal-sound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="drumroll-sound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-drum-roll-begin-529.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="success-sound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
